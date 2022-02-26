@@ -85,6 +85,8 @@ public class CustomRepositoryRestHandlerMapping extends BasePathAwareHandlerMapp
 
         this.mappings = mappings;
         this.configuration = config;
+        this.configuration.setDefaultMediaType(MediaType.APPLICATION_JSON);
+        this.configuration.useHalAsDefaultJsonMediaType(false);
         this.repositories = repositories;
         this.corsConfigurationAccessor = new RepositoryCorsConfigurationAccessor(mappings, NoOpStringValueResolver.INSTANCE,
                 repositories);
